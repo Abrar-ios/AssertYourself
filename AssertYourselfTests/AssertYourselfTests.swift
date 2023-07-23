@@ -21,8 +21,6 @@ final class AssertYourselfTests: XCTestCase {
     
     func test_avoidConditionalCode(){
         let sucess = false
-        if !sucess {
-            XCTFail()
-        }
+        XCTAssertFalse(sucess)
     }
 }
