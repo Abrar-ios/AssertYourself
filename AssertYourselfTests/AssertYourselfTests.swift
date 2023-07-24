@@ -13,6 +13,14 @@ struct SimpleStruct {
     let y: Int
 }
 
+struct SimpleStructWithDescription : CustomStringConvertible {
+    let x: Int
+    let y: Int
+    
+    var description: String {"(\(x), \(y))"}
+}
+
+
 
 final class AssertYourselfTests: XCTestCase {
     
@@ -37,6 +45,11 @@ final class AssertYourselfTests: XCTestCase {
     
     func test_assertNilWithSimpleStruct(){
         let optionalValue : SimpleStruct? = SimpleStruct(x: 2, y: 3)
+        XCTAssertNil(optionalValue)
+    }
+    
+    func test_assertNil_withSelfDescriptionType(){
+        let optionalValue : SimpleStructWithDescription? = SimpleStructWithDescription(x: 1, y: 2)
         XCTAssertNil(optionalValue)
     }
     
