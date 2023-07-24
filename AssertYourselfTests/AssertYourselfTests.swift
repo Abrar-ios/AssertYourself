@@ -8,6 +8,12 @@
 import XCTest
 @testable import AssertYourself
 
+struct SimpleStruct {
+    let x: Int
+    let y: Int
+}
+
+
 final class AssertYourselfTests: XCTestCase {
     
     func test_fail_withSimpleMessage(){
@@ -23,4 +29,15 @@ final class AssertYourselfTests: XCTestCase {
         let sucess = false
         XCTAssertFalse(sucess)
     }
+    
+    func test_assertNil(){
+        let optionalValue : Int? = 123
+        XCTAssertNil(optionalValue)
+    }
+    
+    func test_assertNilWithSimpleStruct(){
+        let optionalValue : SimpleStruct? = SimpleStruct(x: 2, y: 3)
+        XCTAssertNil(optionalValue)
+    }
+    
 }
