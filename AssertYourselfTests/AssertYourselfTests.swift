@@ -64,4 +64,14 @@ final class AssertYourselfTests: XCTestCase {
         XCTAssertEqual(result, "bar")
     }
     
+    func test_floatingPointDanger(){
+        let result = 0.1 + 0.2;
+        XCTAssertEqual(result, 0.3)
+    }
+    
+    func test_floatingPointFixed(){
+        let result = 0.1 + 0.2
+        XCTAssertEqual(result, 0.3, accuracy: 0.000001)
+    }
+    
 }
