@@ -74,4 +74,9 @@ final class AssertYourselfTests: XCTestCase {
         XCTAssertEqual(result, 0.3, accuracy: 0.000001)
     }
     
+    func test_messageOverkill(){
+        let actual = "actual"
+        XCTAssertEqual(actual, "expected", "Expected \"expected \" but got \"\(actual)\"")
+    }
+    
 }
